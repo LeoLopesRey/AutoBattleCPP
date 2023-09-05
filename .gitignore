@@ -79,4 +79,5 @@
 # .vscode
 # SanguinaryPathUnreal.code-workspace
 # .ignore
-
+.idea/*
+x64/*
