@@ -15,7 +15,7 @@ Grid::Grid(int Rows, int Columns) : XSize(Rows), YSize(Columns)
         for (int j = 0; j < YSize; j++)
         {
             int index = GetIndex(YSize, i, j);
-            Character character;
+            Character* character = nullptr;
             GridBox newBox = GridBox(j, i, false, character, GetIndex(YSize, i, j));
             Grids.push_back(newBox); // grids.Add(newBox);
             GridsArr[j][i] = newBox;
@@ -44,4 +44,24 @@ void Grid::UpdateElementAt(int Index, GridBox GridBox)
 int Grid::GetIndex(const int Columns, const int X, const int Y)
 {
     return (Columns * X + Y);
+}
+
+GridBox Grid::FindDifferentTeamAliveCharacter(Enum::CharacterTeam characterTeam) const
+{
+    for (const GridBox& grid : Grids) {
+        if (grid.Characterr != nullptr &&
+            grid.Characterr->GetTeam() != characterTeam &&
+            !grid.Characterr->IsDead()) {
+            return grid;
+            }
+    }
+
+    // return Grids.Find(x => x.Character != null && 
+    //                                 x.Character.GetTeam() != characterTeam && 
+    //                                 !x.Character.IsDead() );
+}
+
+int Grid::VectorSize()
+{
+    return Grids.size();
 }

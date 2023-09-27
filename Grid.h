@@ -2,6 +2,7 @@
 #include <unordered_map>
 #include <vector>
 
+#include "Enums/CharacterTeam.h"
 #include "Structs/GridBox.h"
 #include "Structs/GridCoordinate.h"
 
@@ -29,6 +30,11 @@ namespace AutoBattle
 		
 		// Retrieves the index by using x, y and current column
 		int GetIndex(int Columns, int X, int Y);
+
+		// Returns the first available GridBox that has a character from the opposing team that is alive
+		GridBox FindDifferentTeamAliveCharacter(Enum::CharacterTeam characterTeam) const;
+
+		int VectorSize();
 	};
 }
 
