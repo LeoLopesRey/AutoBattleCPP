@@ -17,7 +17,12 @@ namespace AutoBattle
 
         GridBox(int indexX, int indexY, bool occupied, Character* character, int index) :
         IndexX(indexX), IndexY(indexY), Occupied(occupied), Characterr(character), Index(index) {}
-    
+
+        void SetOccupy(bool occupied, Character* character)
+        {
+            Occupied = occupied;
+            Characterr = character;
+        }
     };
     
 }

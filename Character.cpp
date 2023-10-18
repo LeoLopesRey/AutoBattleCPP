@@ -9,3 +9,8 @@ bool AutoBattle::Character::IsDead() const
 {
     return bIsDead;
 }
+
+int AutoBattle::Character::GetCharacterIndex() const
+{
+    return characterIndex;
+}

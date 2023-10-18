@@ -27,6 +27,12 @@ void BattlefieldManager::UpdateGridBox(int index, GridBox gridBox)
     Gridd.UpdateElementAt(index, gridBox);
 }
 
+void BattlefieldManager::UpdateGridBoxXY(int x, int y, GridBox gridBox)
+{
+    // Gridd[y, x] = gridBox;
+    GetElementXY(y, x) = gridBox;
+}
+
 Character* BattlefieldManager::GetRandomAliveTargetFromOppositeTeam(Enum::CharacterTeam characterTeam)
 {
     return Gridd.FindDifferentTeamAliveCharacter(characterTeam).Characterr;
@@ -51,5 +57,16 @@ std::optional<GridBox> BattlefieldManager::GetElementXY(int x, int y)
     {
         return Gridd.GetElementAt(index);
     }
+}
+
+void BattlefieldManager::DrawBattlefield()
+{
+    Gridd.DrawBattlefield();
+}
+
+bool BattlefieldManager::IndexExists(int index)
+{
+
+    return false;
 }
 

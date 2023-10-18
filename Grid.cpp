@@ -1,5 +1,7 @@
 #include "Grid.h"
 
+#include <iostream>
+
 using namespace AutoBattle;
 
 Grid::Grid(int Rows, int Columns) : XSize(Rows), YSize(Columns)
@@ -64,4 +66,50 @@ GridBox Grid::FindDifferentTeamAliveCharacter(Enum::CharacterTeam characterTeam)
 int Grid::VectorSize()
 {
     return Grids.size();
+}
+
+void Grid::PrintTile(std::string message)
+{
+    // Console.Write(message);
+    std::cout << message;
+}
+
+
+// Prints the tiles that indicates the battlefield
+void Grid::DrawBattlefield()
+{
+    for (int i = 0; i < XSize; i++)
+    {
+        for (int j = 0; j < YSize; j++)
+        {
+            int index = GetIndex(YSize, i, j);
+            if (Grids[index].Occupied)
+            {
+                if (Grids[index].Characterr->IsDead())
+                {
+                    Grids[index].SetOccupy(false, nullptr);
+                    PrintTile("[ ]\t");
+                    continue;
+                }
+
+                auto charIndex = Grids[index].Characterr->GetCharacterIndex();
+
+                if (Grids[index].Characterr->GetTeam() == Enum::CharacterTeam::Player)
+                {
+                    PrintTile("[P{charIndex}]\t");
+                }
+                else
+                {
+                    PrintTile("[E{charIndex}]\t");
+                }
+            }
+            else
+            {
+                PrintTile("[ ]\t");
+            }
+        }
+        std::cout << std::endl << std::endl;
+    }
+    std::cout << std::endl << std::endl;
+            
 }

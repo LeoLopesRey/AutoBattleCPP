@@ -35,6 +35,10 @@ namespace AutoBattle
 		GridBox FindDifferentTeamAliveCharacter(Enum::CharacterTeam characterTeam) const;
 
 		int VectorSize();
+
+		void PrintTile(std::string message);
+		
+		void DrawBattlefield();
 	};
 }
 

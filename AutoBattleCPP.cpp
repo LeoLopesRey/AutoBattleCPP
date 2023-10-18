@@ -17,8 +17,8 @@ int main()
     int BATTLEFIELD_Y_SIZE = 7;
 
     BattlefieldManager battlefieldManager;
-    // IBattlefieldDataSource battlefieldDataSource = battlefieldManager;
-
+    // IBattlefieldDataSource battlefieldDataSource;
+    // IBattlefieldDelegate battlefieldDelegate;
     
     // Single line comment
     /*
@@ -26,32 +26,32 @@ int main()
      * comment
      */
     // Primitive types
-    int var_int = 1;
-    short var_short = 2;
-    float var_float = 10.55;
-    double var_double = 1005.9;
-    char var_char = 'A';
-    bool var_bool = false;
-    char my_c_string[5] = { 'D', 'o', 'g', 's', '\0' }; // string in C style
-    char my_c_string2[5] = "Dogs"; // string in C style
-    std::string var_string = "Leo";
-    auto val_auto1 = 1; // inferred
-    auto val_auto2 = 1.f; // inferred
-    auto val_auto3 = "Carol"; // inferred
-    
-    int calc_sum = 1+1;
-    int calc_sub = 10-11;
-    int calc_mult = 1*5;
-    int calc_duv = 6/2;
+    // int var_int = 1;
+    // short var_short = 2;
+    // float var_float = 10.55;
+    // double var_double = 1005.9;
+    // char var_char = 'A';
+    // bool var_bool = false;
+    // char my_c_string[5] = { 'D', 'o', 'g', 's', '\0' }; // string in C style
+    // char my_c_string2[5] = "Dogs"; // string in C style
+    // std::string var_string = "Leo";
+    // auto val_auto1 = 1; // inferred
+    // auto val_auto2 = 1.f; // inferred
+    // auto val_auto3 = "Carol"; // inferred
+    //
+    // int calc_sum = 1+1;
+    // int calc_sub = 10-11;
+    // int calc_mult = 1*5;
+    // int calc_duv = 6/2;
 
     // #include <cmath>
     // std::pow(base, exponent);
     // std::sqrt(number); 
 
-    unsigned int val_unsigned_int = 1;
+    // unsigned int val_unsigned_int = 1;
 
     // -----
-    int age = 21; // C-like initialization
+    // int age = 21; // C-like initialization
     // int age (21); // Constructor initialization
     // int age {21}; // C++11 list initialization syntax
 
